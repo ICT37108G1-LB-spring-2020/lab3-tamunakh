@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="form-container card">
+          <form>
+            <h3>Add a student</h3>
+          
+            <div class="form-group field">
+              <label for="name">Name</label>
+              <input type="test" name="name" id="name" class="form-control" #newName>
+            </div>
+          
+            <div class="form-group field">
+              <label for="surname">Surname</label>
+              <input type="text" name="surname" id="surname" class="form-control" #newSurname>
+            </div>
+
+            <div class="form-group field">
+                <label for="id">ID</label>
+                <input type="number" name="id" id="id" class="form-control" #newId>
+            </div>
+          
+            <button type="button" class="btn btn-success" (click) ="addStudent(newName, newSurname, newId)">
+              Save
+            </button>
+          </form>
+        </div>
+        
+        <table class="students-list">
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>ID</th>
+          </tr>
+
+          <app-student-item *ngFor="let student of students" [student]="student"></app-student-item>
+        </table>
+      </div>
+    </div>
+</div>
+  
